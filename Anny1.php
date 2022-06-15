@@ -6,7 +6,7 @@ $E_mail="";
 $Tel_No="";
 $password="";
 $gender="";
-//$Skill="";
+$Skill="";
 $dob="";
 if(isset($_POST["btnRes"]))
 {
@@ -34,8 +34,8 @@ if(isset($_POST["btnRes"]))
 	if($_POST["dob"]!="")
 		$dob=$_POST["dob"];
 	
-	/*if($_POST[skills]!="")
-		$Skill=$_POST[skill];*/
+	if($_POST[skills]!="")
+		$Skill=$_POST[skill];
 	
 }
 ?>
@@ -113,9 +113,14 @@ Skills:<input type="checkbox" name="skills[]" value="C">C
 <input type="checkbox" name="skills[]" value="C++">C++
 <input type="checkbox" name="skills[]" value="C#">C#
 <input type="checkbox" name="skills[]" value="Python">Python
+<?php
+if($isPost==true && $skills=="")
+ echo "<span style='color:red;'>Required</span>";
 
-
+?>
 <br><br>
+
+
 Address:<textarea name="address" rowspan="3" colspan="30"></textarea>
 <br><br>
 
